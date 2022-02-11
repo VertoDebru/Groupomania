@@ -1,11 +1,11 @@
 import "../styles/Header.css";
 
+const title = 'Groupomania';
+
 function Header() {
-  const title = 'Groupomania';
   return (
     <div className='app-header'>
-      <i className='fas fa-star'></i>
-      <h1>{title}</h1>
+      <div className='logo' title={title}></div>
     </div>
   );
 }
