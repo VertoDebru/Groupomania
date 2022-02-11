@@ -1,6 +1,7 @@
 article {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding: 10px;
   max-width: 700px;
   
@@ -14,4 +15,22 @@ article h2 {
 article h3 {
   color: var(--color-secondary);
   font-weight: 200;
+}
+
+article .like {
+  width: auto;
+  font-weight: 300;
+}
+
+article a {
+  color: var(--color-secondary);
+  font-weight: 300;
+  text-decoration: none;
+  transition: none;
+}
+
+article a:hover {
+  color: var(--font-color);
+  text-decoration: none;
+  transition: none;
 }
