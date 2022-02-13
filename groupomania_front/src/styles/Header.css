@@ -1,12 +1,11 @@
 .app-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   padding: 5px;
   min-height: 10vh;
   max-height: 10vh;
-  border-bottom: solid 2px var(--color-accent);
   background-color: var(--color-primary);
   color: var(--color-secondary);
 }
@@ -18,7 +17,7 @@
   height: 50px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .logo {
     background-image: url('../assets/logoMobile.png');
     background-size: contain;
