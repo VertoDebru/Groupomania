@@ -12,6 +12,7 @@
 
 .logo {
   background-image: url('../assets/logoDesktop.png');
+  background-repeat: no-repeat;
   background-size: contain;
   width: 300px;
   height: 50px;
