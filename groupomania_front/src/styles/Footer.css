@@ -1,3 +1,45 @@
 .app-footer {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  height: 10vh;
   text-align: center;
+  background-color: var(--color-primary);
+}
+
+.app-footer ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0px;
+}
+
+.app-footer ul > li {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.2em;
+  padding-top: 10px;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+  transition: none;
+}
+
+.active {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.2em;
+  padding-top: 10px;
+  cursor: default !important;
+}
+
+.app-footer ul > li:hover,
+.active {
+  background-color: var(--color-secondary);
+  color: var(--color-primary) !important;
+  transition: none !important;
 }

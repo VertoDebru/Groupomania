@@ -2,9 +2,13 @@ import "../styles/Footer.css";
 
 function Footer() {
   return (
-    <div className='app-footer'>
-      <h2>Footer</h2>
-    </div>
+    <nav className='app-footer'>
+      <ul>
+        <li className='active'><i class="fa-solid fa-newspaper"></i></li>
+        <li><i class="fa-solid fa-user"></i></li>
+        <li><i class="fa-solid fa-square-plus"></i></li>
+      </ul>
+    </nav>
   );
 }
 
