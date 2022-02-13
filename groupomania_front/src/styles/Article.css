@@ -1,13 +1,12 @@
 article {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 10px;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0.5em;
   width: 95%;
-  max-width: 700px;
   background-color: var(--color-secondary);
+  border-bottom: 2px solid white;
 }
 
 article .header {
@@ -16,13 +15,19 @@ article .header {
   align-items: center;
 }
 
+article .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 article h2 {
-  padding-left: 5px;
+  padding-left: 0.2em;
   color: var(--color-primary);
 }
 
 article h3 {
-  padding-left: 5px;
+  padding-left: 0.3em;
   color: var(--font-color);
   font-weight: 400;
 }
@@ -43,18 +48,6 @@ article a:hover {
   color: var(--color-accent);
   text-decoration: none;
   transition: none;
-}
-
-aside {
-  position: absolute;
-  right: 10px;
-  bottom: -35px;
-  padding: 10px;
-  width: 95%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-weight: 300;
-  z-index: -1;
 }
 
 .fa-clock {
