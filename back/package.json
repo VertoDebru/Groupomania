@@ -1,0 +1,22 @@
+{
+  "name": "groupomania_back",
+  "version": "1.0.0",
+  "description": "Node server back with Sequelize for DB.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server"
+  },
+  "author": "Tony Vervoot <t.vervoot@gmail.com> (http://vervoot.alwaysdata.net/)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "nodemon": "^2.0.15"
+  }
+}
