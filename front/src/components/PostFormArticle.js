@@ -1,7 +1,7 @@
 import "../styles/PostFormArticle.css";
 import avatar from "../assets/logo192.png";
 
-function PostFormArticle() {
+export default function PostFormArticle() {
   return (
     <div className='app-post-form'>
       <div className='left'>
@@ -13,5 +13,3 @@ function PostFormArticle() {
     </div>
   );
 }
-
-export default PostFormArticle;

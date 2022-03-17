@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 import "../styles/Comments.css";
 
-function Comments() {
+export default function Comments() {
   return (
     <div className='app-comments'>
       <div className='comment'>
@@ -14,5 +14,3 @@ function Comments() {
     </div>
   );
 }
-
-export default Comments;

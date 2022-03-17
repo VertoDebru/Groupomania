@@ -1,6 +1,6 @@
 import "../styles/Footer.css";
 
-function Footer() {
+export default function Footer() {
   return (
     <nav className='app-footer'>
       <ul>
@@ -11,5 +11,3 @@ function Footer() {
     </nav>
   );
 }
-
-export default Footer;

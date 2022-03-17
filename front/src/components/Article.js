@@ -3,7 +3,7 @@ import Comments from "./Comments";
 import AddComment from "./AddComment";
 import "../styles/Article.css";
 
-function Article() {
+export default function Article() {
   return (
     <div>
       <article>
@@ -27,5 +27,3 @@ function Article() {
     </div>
   );
 }
-
-export default Article;

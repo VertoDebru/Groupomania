@@ -1,0 +1,65 @@
+.app-login,
+.app-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+  height: 90vh;
+  overflow: auto;
+}
+
+.app-user-icon {
+  margin-bottom: -40px;
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  font-size: 4em;
+  border-radius: 5em;
+  text-align: center;
+  color: var(--color-primary);
+  z-index: 1;
+}
+
+.app-sign-icon {
+  margin-bottom: -40px;
+  width: 100px;
+  height: 100px;
+  padding: 15px 25px;
+  font-size: 3.5em;
+  border-radius: 5em;
+  text-align: center;
+  color: var(--color-primary);
+  z-index: 1;
+}
+
+.app-login-form,
+.app-sign-form {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  max-width: 375px;
+  padding: 10px;
+}
+
+.app-login .app-user-icon,
+.app-login .app-login-form,
+.app-register .app-sign-icon,
+.app-register .app-sign-form {
+  background-color: var(--color-secondary);
+}
+
+.app-login-form h3,
+.app-sign-form h3 {
+  margin-block-start: 15px;
+}
+
+.app-sign {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.app-sign h2 {
+  color: white;
+  font-size: 1.1em;
+}

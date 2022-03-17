@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 import "../styles/AddComment.css";
 
-function AddComment() {
+export default function AddComment() {
   return (
     <form>
       <Avatar />
@@ -9,5 +9,3 @@ function AddComment() {
     </form>
   );
 }
-
-export default AddComment;
