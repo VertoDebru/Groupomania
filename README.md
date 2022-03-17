@@ -1,14 +1,24 @@
 # Projet 7 - Groupomania
 Projet Groupomania - Openclassrooms
 ## Groupomania Front-End
-![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)\
+![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
+### Available Scripts
+In the `front` directory, you can run:
+
+`npm start`\
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+`npm run build`\
+Builds the app for production to the `build` folder.
+
 Processing...
 ## Groupomania Back-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/NodeJs-build-blue?style=plastic&logo=node&logoColor=white)
 ![](https://img.shields.io/badge/Express-build-blue?style=plastic&logo=express&logoColor=white)
 ### Available Scripts
-In the 'back' directory, you can run:
+In the `back` directory, you can run:
 
 `npm start`\
 Runs the app server.
