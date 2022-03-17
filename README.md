@@ -1,6 +1,7 @@
 # Projet 7 - Groupomania
 Projet Groupomania - Openclassrooms
 ## Groupomania Front-End
+![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
 ### Available Scripts
 In the `front` directory, you can run:
