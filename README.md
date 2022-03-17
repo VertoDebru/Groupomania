@@ -10,7 +10,9 @@ Processing...
 ### Available Scripts
 In the 'back' directory, you can run:\
 `npm start`\
-Runs the app server.\
+Runs the app server.
+
 `npm run dev`\
-Runs the app server in the development mode. (nodemon)\
+Runs the app server in the development mode. (nodemon)
+
 Processing...
