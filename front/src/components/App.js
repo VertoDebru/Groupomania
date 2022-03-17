@@ -12,23 +12,13 @@ export default class App extends React.Component {
   }
 
   setApp() {
-    if(this.token) {
-      return (
-        <div>
-          <Header />
-          <Main />
-          <Footer />
-        </div>
-      )
-    }
-    else {
-      return (
-        <div>
-          <Header />
-          <Login />
-        </div>
-      )
-    }
+    return (
+      <div>
+        <Header />
+        {this.token ? <Main /> : <Login />}
+        {this.token ? <Footer /> : null}
+      </div>
+    )
   }
 
   render() {
