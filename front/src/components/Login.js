@@ -1,71 +1,77 @@
+import React from "react";
 import axios from "axios";
 import "../styles/Login.css";
 
-const btnValueLogin = "Connexion";
-const btnValueSign = "Inscription";
-const reqLogin = "http://localhost:8080/api/auth/login";
-
-/*         Token        *
-  * ******************* */
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-  document.location.href = "./../";
-}
-
-function getToken() {
-  const userToken = sessionStorage.getItem('token');
-  return userToken;
-}
-/* ******************* *
- *       END Token     */
-
-const register = ( () => {
-  document.location.href = "./Register";
-})
-
-const eventOnSubmit = ( () => {
-  let inputEmail = document.getElementsByName("email")[0];
-  let inputPassword = document.getElementsByName("password")[0];
-  
-  // Controle des champs formulaire.
-  if(inputEmail.value.length <= 4 || inputPassword.value.length < 4 ) {
-    return console.error("Input not complete!");
+export default class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoading: false
+    };
+    this.token = sessionStorage.getItem('token');
+    this.authUrl = 'http://localhost:8080/api/auth/login';
+    // Inputs
+    this.email = null;
+    this.password = null;
+    // OnClick
+    this.postLogin = this.postLogin.bind(this);
   }
 
-  // Envoie de la requête.
-  axios.post(reqLogin, {
-    email: inputEmail.value,
-    password: inputPassword.value
-  })
-  .then( (res) => {
-    console.log(res.data.token);
-    setToken(res.data.token);
-  })
-  .catch( (error) => {
-    console.log(error);
-  });
-})
+  componentDidMount() {
+    // Get Inputs
+    this.email = document.getElementsByName("email")[0];
+    this.password = document.getElementsByName("password")[0];
+  }
 
-export default function Login() {
-  const token = getToken();
-  if(token) return document.location.href = './../';
+  postLogin() {
+    // Check inputs.
+    if(this.email.value.length <= 4 || this.password.value.length < 4 ) {
+      return console.error("Input not complete!");
+    }
 
-  return (
-    <div className='app-login'>
-      <div className='app-user-icon fa-solid fa-user-secret'></div>
-      <form method='post' className='app-login-form'>
-        <h3>Email</h3>
-        <input name='email' type='email' placeholder='Ex : example@groupomania.com' label='Adresse email' required />
-        <h3>Mot de passe</h3>
-        <input name='password' type='password' placeholder='mot de passe' label='Mot de passe' required />
-        <input type='button' onClick={eventOnSubmit} className='login' label='Connexion' value={btnValueLogin} />
-      </form>
+    this.setState({ isLoading: true });
+    // Post request.
+    axios.post(this.authUrl, {
+      email: this.email.value,
+      password: this.password.value
+    })
+    .then((res) => { 
+      this.setToken(res.data.token);
+      this.setState({ isLoading: false });
+    })
+    .catch((err) => {
+      console.log(err);
+      this.setState({ isLoading: false });
+    });
+  }
 
-      <div className='app-sign'>
-        <h2>Vous n'êtes pas encore membre ?</h2>
-        <input type='button' onClick={register} className='sign' label='Inscription' value={btnValueSign} />
+  register() {
+    document.location.href = "./Register";
+  }
+
+  setToken(userToken) {
+    sessionStorage.setItem('token', JSON.stringify(userToken));
+    document.location.href = "./../";
+  }
+
+  render() {
+    return (
+      <div className='app-login'>
+        <div className='app-user-icon fa-solid fa-user-secret'></div>
+        <form method='post' className='app-login-form'>
+          <h3>Email</h3>
+          <input name='email' type='email' placeholder='Ex : example@groupomania.com' label='Adresse email' required />
+          <h3>Mot de passe</h3>
+          <input name='password' type='password' placeholder='mot de passe' label='Mot de passe' required />
+          <input type='button' onClick={this.postLogin} disabled={this.state.isLoading} className='login' label='Connexion' value='Connexion' />
+        </form>
+  
+        <div className='app-sign'>
+          <h2>Vous n'êtes pas encore membre ?</h2>
+          <input type='button' onClick={this.register} disabled={this.state.isLoading} className='sign' label='Inscription' value='Inscription' />
+        </div>
+  
       </div>
-
-    </div>
-  );
+    )
+  }
 }
