@@ -3,6 +3,35 @@ const jwt = require('jsonwebtoken');
 const db = require("../models");
 const Users = db.users;
 
+// Récupération des infos d'un utilisateur.
+exports.userGet = (req,res) => {
+    let userId = req.query.id;
+    console.log("New user get request where id is: "+userId);
+    console.log("-----------------------");
+    console.log('Checking datas in database...');
+    Users.findOne({where:{id:userId}})
+    .then((user) => {
+        // Verifie si l'utilisateur existe dans la BDD.
+        if(!user) {
+            console.log('User not found where id '+userId);
+            return res.status(404).json({ error: 'User not found!' });
+        }
+        
+        console.log(`User '${user.name}' found!`);
+        res.status(200).json({
+            userId: user.id,
+            name: user.name,
+            jobId: user.jobId,
+            avatar: user.avatar,
+            isAdmin: user.isAdmin
+        });
+    })
+    .catch((error) => {
+        console.log("Error!");
+        return res.status(500).json({error: error});
+    });
+};
+
 // Connexion d'un utilisateur.
 exports.userLogin = (req,res) => {
     // Verification des champs du formulaire.
