@@ -17,11 +17,29 @@ exports.articlesGet = (req,res) => {
         
         console.log(`Articles found!`);
         console.log("-----------------------");
-        console.log(res.data);
-        //res.status(200).json({ articlesId: res });
+        console.log(articles);
+        res.status(200).json({ articles: articles });
     })
     .catch((error) => {
         console.log("Error!");
         return res.status(500).json({error: error});
     });
 };
+
+// Ajout d'un article.
+exports.articleAdd = (req,res) => {
+    // Verification des champs du formulaire.
+    /*if (!req.body.email || !req.body.password) 
+        return res.status(400).json({ error: 'Empty input!' });*/
+    console.log("Add article request.");
+    console.log("-----------------------");
+    const article = new Articles({
+        authorId: 1,
+        title: "Test du Titre.",
+        article: "Veniam ad deserunt non culpa esse nisi amet dolor proident amet cupidatat laborum...",
+        postDate: new Date()
+    });
+    article.save()
+    .then(() => res.status(201).json({ articleId: article.id }))
+    .catch(error => res.status(500).json({ error }));
+}
