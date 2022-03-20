@@ -3,10 +3,11 @@ const Comments = db.comments;
 
 // Récupération des commentaires.
 exports.commentsGet = (req,res) => {
+    let articleId = req.query.article;
     console.log("Comment get request");
     console.log("-----------------------");
     console.log('Checking datas in database...');
-    Comments.findAll()
+    Comments.findAll({where:{articleId:articleId}})
     .then((comments) => {
         // Verifie si des commentaires existent dans la BDD.
         if(comments.length <= 0) {
