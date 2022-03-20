@@ -17,5 +17,6 @@ db.sequelize = sequelize;
 // All Models
 db.users = require("./Users")(sequelize, Sequelize);
 db.articles = require("./Articles")(sequelize, Sequelize);
+db.comments = require("./Comments")(sequelize, Sequelize);
 
 module.exports = db;

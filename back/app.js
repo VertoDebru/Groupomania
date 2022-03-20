@@ -5,6 +5,7 @@ const app = express();
 // Import routes.
 const userRoutes = require('./routes/users');
 const articlesRoutes = require('./routes/articles');
+const commentsRoutes = require('./routes/comments');
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,5 +19,6 @@ app.use(express.json());
 app.use('/api/auth', userRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/articles', articlesRoutes);
+app.use('/api/comments', commentsRoutes);
 
 module.exports = app;
