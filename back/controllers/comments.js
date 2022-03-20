@@ -1,7 +1,7 @@
 const db = require("../models");
 const Comments = db.comments;
 
-// Récupération des articles.
+// Récupération des commentaires.
 exports.commentsGet = (req,res) => {
     console.log("Comment get request");
     console.log("-----------------------");
