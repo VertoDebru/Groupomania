@@ -26,3 +26,22 @@ exports.commentsGet = (req,res) => {
         return res.status(500).json({error: error});
     });
 };
+
+// Ajout d'un commentaire.
+exports.commentAdd = (req,res) => {
+    let articleId = req.query.article;
+    // Verification des champs du formulaire.
+    /*if (!req.body.email || !req.body.password) 
+        return res.status(400).json({ error: 'Empty input!' });*/
+    console.log("Add comment request.");
+    console.log("-----------------------");
+    const comment = new Comments({
+        articleId: articleId,
+        authorId: 1,
+        comment: "Voici un commentaire...",
+        postDate: new Date()
+    });
+    comment.save()
+    .then(() => res.status(201).json({ commentId: comment.id }))
+    .catch(error => res.status(500).json({ error }));
+}
