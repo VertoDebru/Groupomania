@@ -12,7 +12,11 @@
   overflow: auto;
 }
 
-.app-comments .comment {
+.app-comments div {
+  width: 100%;
+}
+
+.app-comments div .comment {
   display: flex;
   align-items: center;
   justify-content: space-around;
