@@ -19,10 +19,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         postDate: {
             type: Sequelize.DATE
-        },
-        authorId: {
-            type: Sequelize.INTEGER,
-            allowNull: false
         }
     })
 
