@@ -25,19 +25,23 @@ export default class Login extends React.Component {
   componentDidMount() {
     this.checkToken();
     // Get Inputs
+    this.firstname = document.getElementsByName("firstname")[0];
+    this.lastname = document.getElementsByName("lastname")[0];
     this.email = document.getElementsByName("email")[0];
     this.password = document.getElementsByName("password")[0];
   }
 
   postSign() {
     // Check inputs.
-    if(this.email.value.length <= 4 || this.password.value.length < 4 ) {
+    if(this.firstname.value.length < 4 || this.lastname.value.length < 4 || this.email.value.length <= 4 || this.password.value.length < 4 ) {
       return console.error("Input not complete!");
     }
 
     this.setState({ isLoading: true });
     // Post request.
     axios.post(this.signUrl, {
+      firstname: this.firstname.value,
+      lastname: this.lastname.value,
       email: this.email.value,
       password: this.password.value
     })
@@ -68,6 +72,10 @@ export default class Login extends React.Component {
           <div className='app-register'>
             <div className='app-sign-icon fa-solid fa-file-signature'></div>
             <form method='post' className='app-sign-form'>
+              <h3>Prénom</h3>
+              <input name='firstname' type='text' placeholder='Prénom' label='Prénom' required />
+              <h3>Nom</h3>
+              <input name='lastname' type='text' placeholder='Nom' label='Nom' required />
               <h3>Email</h3>
               <input name='email' type='email' placeholder='Ex : example@groupomania.com' label='Adresse email' required />
               <h3>Mot de passe</h3>
