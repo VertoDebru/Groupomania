@@ -5,10 +5,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true
         },
-        authorId: { 
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
         title: {
             type: Sequelize.STRING,
             allowNull: false
@@ -17,12 +13,17 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        postDate: {
-            type: Sequelize.DATE
-        },
         image: {
             type: Sequelize.STRING,
             defaultValue: "none"
+        },
+        postDate: {
+            type: Sequelize.DATE,
+            allowNull: false
+        },
+        authorId: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
     })
 

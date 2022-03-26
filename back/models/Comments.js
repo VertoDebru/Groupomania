@@ -9,16 +9,20 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        authorId: { 
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
         comment: {
             type: Sequelize.STRING,
             allowNull: false
         },
+        image: {
+            type: Sequelize.STRING,
+            defaultValue: "none"
+        },
         postDate: {
             type: Sequelize.DATE
+        },
+        authorId: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
     })
 
