@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 // Security
 //const auth = require('./middlewares/auth');
 // Import routes.
@@ -20,5 +21,8 @@ app.use('/api/auth', userRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/articles', articlesRoutes);
 app.use('/api/comments', commentsRoutes);
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/avatars', express.static(path.join(__dirname, 'avatars')));
 
 module.exports = app;
