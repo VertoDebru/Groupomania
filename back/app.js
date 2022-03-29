@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// Security
-//const auth = require('./middlewares/auth');
 // Import routes.
 const userRoutes = require('./routes/users');
 const articlesRoutes = require('./routes/articles');
