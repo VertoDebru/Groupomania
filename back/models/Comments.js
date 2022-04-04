@@ -5,10 +5,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true
         },
-        articleId: {
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
         comment: {
             type: Sequelize.STRING,
             allowNull: false
