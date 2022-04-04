@@ -8,8 +8,8 @@ const ctrlUser = require('../controllers/users');
 
 router.get('/', ctrlUser.userGet);
 router.post('/login', ctrlUser.userLogin);
-router.post('/sign', multer, ctrlUser.userSign);
-router.put('/', multer, ctrlUser.userEdit);
-router.delete('/', ctrlUser.userDel);
+router.post('/sign', multer.single('avatar'), ctrlUser.userSign);
+router.put('/', multer.single('avatar'), ctrlUser.userEdit);
+router.delete('/:id/:avatar', ctrlUser.userDel);
 
 module.exports = router;

@@ -7,8 +7,8 @@ const multer = require('../middlewares/multer-config');
 const ctrlArticle = require('../controllers/articles');
 
 router.get('/', ctrlArticle.articlesGet);
-router.post('/', multer, ctrlArticle.articleAdd);
-router.put('/', multer, ctrlArticle.articleEdit);
-router.delete('/', ctrlArticle.articleDel);
+router.post('/', multer.single('image'), ctrlArticle.articleAdd);
+router.put('/', multer.single('image'), ctrlArticle.articleEdit);
+router.delete('/:id', ctrlArticle.articleDel);
 
 module.exports = router;

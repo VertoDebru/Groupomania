@@ -7,8 +7,8 @@ const multer = require('../middlewares/multer-config');
 const ctrlComment = require('../controllers/comments');
 
 router.get('/', ctrlComment.commentsGet);
-router.post('/', multer, ctrlComment.commentAdd);
-router.put('/', multer, ctrlComment.commentEdit);
+router.post('/', multer.single('image'), ctrlComment.commentAdd);
+router.put('/', multer.single('image'), ctrlComment.commentEdit);
 router.delete('/', ctrlComment.commentDel);
 
 module.exports = router;
