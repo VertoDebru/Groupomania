@@ -7,15 +7,17 @@ const MIME_TYPES = {
   'image/gif': 'gif'
 };
 
+// Storage images.
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, 'images');
+    if(file.fieldname === 'image') callback(null, 'images');
+    else callback(null,'avatars');
   },
   filename: (req, file, callback) => {
-    const name = file.originalname.split(' ','.').join('_');
+    const name = file.originalname.split(' ').join('_');
     const extension = MIME_TYPES[file.mimetype];
-    callback(null, name + '_' + Date.now() + '.' + extension);
+    callback(null, name.split('.'+extension).join(Date.now()) + '.' + extension);
   }
 });
 
-module.exports = multer({storage: storage}).single('image');
+module.exports = multer({storage: storage});
