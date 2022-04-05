@@ -2,16 +2,7 @@ import "../styles/Header.css";
 
 const title = 'Groupomania';
 
-/*         Token        *
-  * ******************* */
-function deleteToken() {
-  sessionStorage.clear();
-}
-/* ******************* *
- *       END Token     */
-
 const goHome = ( () => {
-  deleteToken();
   document.location.href = "./../";
 })
 

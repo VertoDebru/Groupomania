@@ -5,7 +5,7 @@ import "../styles/Login.css";
 import Header from "../components/Header";
 
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -45,8 +45,8 @@ export default class Login extends React.Component {
       email: this.email.value,
       password: this.password.value
     })
-    .then((res) => { 
-      this.setToken(res.data.token);
+    .then((res) => {
+      this.setToken(res.data.token, res.data.userId);
       this.setState({ isLoading: false });
     })
     .catch((err) => {
@@ -59,8 +59,9 @@ export default class Login extends React.Component {
     document.location.href = "./../";
   }
 
-  setToken(userToken) {
+  setToken(userToken, userId) {
     sessionStorage.setItem('token', JSON.stringify(userToken));
+    sessionStorage.setItem('userId', JSON.stringify(userId));
     document.location.href = "./../";
   }
 
