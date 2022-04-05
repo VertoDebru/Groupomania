@@ -4,15 +4,16 @@ article {
   flex-direction: column;
   margin: 10px auto 0 auto;
   padding: 0.5em;
-  width: 95%;
+  width: 90%;
   background-color: var(--color-secondary);
   border-bottom: 2px solid white;
 }
 
 article .header {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 article .footer {
@@ -28,7 +29,13 @@ article h2 {
 
 article h3 {
   padding-left: 0.3em;
-  color: var(--font-color);
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+article h4 {
+  padding-left: 0.3em;
+  color: var(--color-accent-2);
   font-weight: 400;
 }
 
@@ -48,6 +55,25 @@ article a:hover {
   color: var(--color-accent);
   text-decoration: none;
   transition: none;
+}
+
+article .app-article-infos {
+  width: 100%;
+}
+
+article .app-article-opt {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 0;
+  cursor: pointer;
+}
+
+article img {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .fa-clock {

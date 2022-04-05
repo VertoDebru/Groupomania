@@ -29,6 +29,17 @@
   transition: none;
 }
 
+.app-footer ul > a li {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.2em;
+  padding-top: 10px;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+  transition: none;
+}
+
 .active {
   width: 50px;
   height: 50px;
@@ -38,6 +49,7 @@
 }
 
 .app-footer ul > li:hover,
+.app-footer ul > a:hover li,
 .active {
   background-color: var(--color-secondary);
   color: var(--color-primary) !important;

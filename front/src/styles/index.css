@@ -4,6 +4,7 @@
   --color-primary: #B30000;
   --color-secondary: #FFFFFF;
   --color-accent: #999999;
+  --color-accent-2: #545454;
   --font-color: #000000;
 }
 
@@ -29,7 +30,8 @@ body {
 /* Texts style */
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin-block-start: 0;
   margin-block-end: 0;
   font-weight: 400;
@@ -43,10 +45,14 @@ h3 {
   font-size: 1em;
 }
 
-p {
+h4 {
   font-size: 0.9em;
-  margin-block-start: 10px;
-  margin-block-end: 10px;
+}
+
+p {
+  font-size: 1em;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
   font-weight: 300;
 }
 /***************/
