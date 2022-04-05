@@ -1,13 +1,39 @@
+import React from "react";
+
 import "../styles/Footer.css";
 
-export default function Footer() {
-  return (
-    <nav className='app-footer'>
+export default class Footer extends React.Component {
+  constructor() {
+    super();
+    this.page = null;
+  }
+
+  setFooter() {
+    this.page = window.location.pathname;
+    if(this.page === '/Profile') {
+      return (
+        <ul>
+          <a href='./'><li><i className="fa-solid fa-newspaper"></i></li></a>
+          <li className='active'><i className="fa-solid fa-user"></i></li>
+        </ul>
+      );
+    }
+
+    //<li><i className="fa-solid fa-square-plus"></i></li>
+
+    return (
       <ul>
         <li className='active'><i className="fa-solid fa-newspaper"></i></li>
-        <li><i className="fa-solid fa-user"></i></li>
-        <li><i className="fa-solid fa-square-plus"></i></li>
+        <a href='./Profile'><li><i className="fa-solid fa-user"></i></li></a>
       </ul>
-    </nav>
-  );
+    );
+  }
+
+  render() {
+    return (
+      <nav className='app-footer'>
+        {this.setFooter()}
+      </nav>
+    )
+  }
 }
