@@ -81,3 +81,8 @@ Runs the app server.
 
 `npm run dev`\
 Runs the app server in the development mode. (nodemon)
+
+## Preview
+![Login](https://i.imgur.com/1ltaKG6.jpg)
+![Sign](https://i.imgur.com/6WzsWlU.jpg)
+![Home](https://i.imgur.com/WpD0pYJ.jpg)
