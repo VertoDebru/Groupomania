@@ -4,7 +4,15 @@ Projet Groupomania - Openclassrooms.
 ## Installation
 First, remember to check and/or configure the .env file :
 ```.env
-DB_DIAL = ''
+MY_PORT = 8080          // Port used for back server.
+
+// All informations for connect to database.
+DB_DIAL = mysql         // Dial for database.
+DB_NAME = groupomania   // Database name.
+DB_USER = root          // Database username.
+DB_PASS = admin         // Database password.
+DB_HOST = localhost     // Database host.
+DB_PORT = 3306          // Database port.
 ```
 
 Install all the dependencies with npm.\
