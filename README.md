@@ -1,5 +1,5 @@
-# Projet 7 - Groupomania
-Projet Groupomania - Openclassrooms.
+# Project 7 - Groupomania
+Project Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
 ## Installation
 First time, remember to check and/or configure the .env file :
