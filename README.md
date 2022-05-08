@@ -13,6 +13,7 @@ In the `back` directory :
 npm install
 npm run start
 ```
+
 ## Groupomania Features
 * Signup / Login.
 * Post article with/without image.
@@ -25,6 +26,7 @@ npm run start
 * Edit profile. (Firstname, Lastname, Email, Password, Avatar)
 * Delete account.
 * Logout.
+
 ## Groupomania Front-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
@@ -41,7 +43,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 `npm run build`\
 Builds the app for production to the `build` folder.
 
-Processing...
 ## Groupomania Back-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/NodeJs-build-blue?style=plastic&logo=node&logoColor=white)
@@ -62,5 +63,3 @@ Runs the app server.
 
 `npm run dev`\
 Runs the app server in the development mode. (nodemon)
-
-Processing...
