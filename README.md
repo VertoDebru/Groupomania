@@ -67,8 +67,8 @@ Builds the app for production to the `build` folder.
 ![](https://img.shields.io/badge/Express-build-blue?style=plastic&logo=express&logoColor=white)
 ### Dependencies
 * bcrypt (used to encrypt the user's password)
-* dotenv 
-* express
+* dotenv (user for the management of environment variables)
+* express (MVC-like framework)
 * jsonwebtoken (used to secure connections with a token)
 * multer (used for upload image/avatar)
 * mysql/mysql2 (used for mysql database)
