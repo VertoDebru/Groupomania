@@ -2,6 +2,11 @@
 Projet Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
 ## Installation
+First, remember to check and/or configure the .env file :
+```.env
+DB_DIAL = ''
+```
+
 Install all the dependencies with npm.\
 In the `front` directory :
 ```bash
