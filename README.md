@@ -29,7 +29,7 @@ npm run start
 
 ## Specificities
 1. The first registered user will get administrator rights.
- > It is not possible to remove administrator rights from the first user.
+> It is not possible to remove administrator rights from the first user.
 2. Only the administrator can permanently delete an account. For others, the account is deactivated and keeps articles, comments and user email address.
 
 ## Features
