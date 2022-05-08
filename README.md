@@ -6,7 +6,7 @@ Projet Groupomania - Openclassrooms.
 Install all the dependencies with npm.
 In the `front` directory :
 ```bash
-cd front <!--- if your terminal is open in parent directory --->
+cd front (if your terminal is open on parent directory)
 npm install
 ```
 In the `back` directory :
