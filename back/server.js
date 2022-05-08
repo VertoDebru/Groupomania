@@ -20,7 +20,7 @@ server.listen(MY_PORT, () => {
     console.log('Checking database connection...');
     db.sequelize.authenticate()
     .then( () => {
-        db.sequelize.sync({alter: true, force: false});
+        db.sequelize.sync({alter: false, force: false});
         console.log('Database connection OK!');
         console.log('-----------------------');
     })
