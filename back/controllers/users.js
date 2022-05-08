@@ -1,37 +1,45 @@
+const fs = require('fs');
 const bCrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
 const db = require("../models");
+const { Op } = require("sequelize");
 const Users = db.users;
+const Jobs = db.jobs;
 
 // Récupération des infos d'un utilisateur.
 exports.userGet = (req,res) => {
     let authorId = parseInt(req.query.id);
-    console.log("New user get request where id is: "+authorId);
-    console.log("-----------------------");
-    console.log('Checking datas in database...');
-    Users.findOne({where:{id:authorId}})
+    Users.findOne({
+        where: {id:authorId, isDelete:false},
+        include: {model: Jobs}
+    })
     .then((user) => {
         // Verifie si l'utilisateur existe dans la BDD.
-        if(!user) {
-            console.log('User not found where id '+authorId);
+        if(!user)
             return res.status(404).json({ error: 'User not found!' });
-        }
         
-        console.log(`User '${user.firstname} ${user.lastname}' found!`);
-        res.status(200).json({
-            id: user.id,
-            firstname: user.firstname,
-            lastname: user.lastname,
-            email: user.email,
-            jobId: user.jobId,
-            avatar: user.avatar,
-            isAdmin: user.isAdmin
-        });
+        res.status(200).json({ user });
     })
     .catch((error) => {
-        console.log("Error!");
-        console.log(error);
+        return res.status(500).json({error: error});
+    });
+};
+
+// Récupération des infos d'un utilisateur selon son nom/prenom.
+exports.userSearch = (req,res) => {
+    let search = req.query.search;
+    Users.findAll({
+        where: {
+            firstname: {
+                [Op.like]: '%' + search + '%'
+            }
+        },
+        include: {model: Jobs}
+    }).then((users) => {
+        if(!users.length) return res.status(204).json({ message: 'Empty!' });
+        res.status(200).json({ users });
+    })
+    .catch((error) => {
         return res.status(500).json({error: error});
     });
 };
@@ -41,19 +49,13 @@ exports.userLogin = (req,res) => {
     // Verification des champs du formulaire.
     if (!req.body.email || !req.body.password) 
         return res.status(400).json({ error: 'Empty input!' });
-    console.log("New login request.");
-    console.log("Email    : " + req.body.email);
-    console.log("Password : " + req.body.password);
-    console.log("-----------------------");
-    console.log('Checking datas in database...');
-    Users.findOne({where:{email:req.body.email}})
+
+    Users.findOne({ where: {email:req.body.email, isDelete:false }})
     .then((user) => {
         // Verifie si l'email existe dans la BDD.
-        if(!user) {
-            console.log(`Email '${req.body.email}' not found!`);
+        if(!user)
             return res.status(404).json({ error: 'User not found!' });
-        }
-        console.log(`User '${user.firstname} ${user.lastname}' found!`);
+
         // Verifie le mot de passe.
         bCrypt.compare(req.body.password, user.password)
         .then(valid => {
@@ -62,17 +64,15 @@ exports.userLogin = (req,res) => {
             res.status(200).json({
                 userId: user.id,
                 token: jwt.sign(
-                    { userId: user._id },
+                    { userId: user.id },
                     'RANDOM_TOKEN_SECRET',
                     { expiresIn: '24h' }
                 )
             });
         })
         .catch(error => res.status(500).json({ error }));
-        //return res.status(200).json({data: user});
     })
     .catch((error) => {
-        console.log("Error!");
         return res.status(500).json({error: error});
     });
 };
@@ -82,40 +82,55 @@ exports.userSign = (req,res) => {
     // Verification des champs du formulaire.
     if (!req.body.email || !req.body.password) 
         return res.status(400).json({ error: 'Empty input!' });
-    console.log("New sign request.");
-    console.log("First    : " + req.body.firstname);
-    console.log("Last     : " + req.body.lastname);
-    console.log("Email    : " + req.body.email);
-    console.log("Password : " + req.body.password);
-    console.log("-----------------------");
     
     // Hashage du mot de passe
     bCrypt.hash(req.body.password, 10)
     .then( hash => {
         console.log('New registery.');
-        Users.create({
+        let objectJobs = { jobs: 'Membre'};
+        let objectUser = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: hash
-        }).then((user) => res.status(201).json({
-            userId: user.id,
-            token: jwt.sign(
-                { userId: user.id },
-                'RANDOM_TOKEN_SECRET',
-                { expiresIn: '24h' }
-            )})
-        );
+            password: hash,
+            jobId: 1,
+            isAdmin: 0
+        };
+        Users.findAll().then((user) => {
+            if(!user || user.length == 0) {
+                // Création du job par défaut.
+                Jobs.create({ ...objectJobs }).then((jobs) => {
+                    console.log(jobs);
+                });
+                // Droits d'aministrations accordés.
+                objectUser = {
+                    ...objectUser,
+                    isAdmin: 1
+                };
+            }
+            // Création du nouveau membre.
+            Users.create({ ...objectUser }).then((user) => {
+                res.status(201).json({
+                    userId: user.id,
+                    token: jwt.sign(
+                        { userId: user.id },
+                        'RANDOM_TOKEN_SECRET',
+                        { expiresIn: '24h' }
+                )})
+            });
+        })
     })
     .catch(error => res.status(500).json({ error }));
 }
 
 // Modification d'un utilisateur.
 exports.userEdit = (req,res) => {
-    let userId = req.body.userId;
+    let forDelete = false;
+    if(req.params.delete == 1) forDelete = true;
+    let userId = req.params.id;
     // Creation de l'objet
     let objectUser = {...req.body};
-    Users.findOne({where: {id:userId}})
+    Users.findOne({where: {id:userId, isDelete:false}})
     .then( user => {
         // Si l'utilisateur veut modifier son avatar existant.
         if(req.file && user.avatar) {
@@ -138,6 +153,24 @@ exports.userEdit = (req,res) => {
             objectUser = {
                 ...objectUser,
                 password: `${newPass}`
+            };
+        }
+        // Si l'utilisateur supprime son compte.
+        if(forDelete) {
+            if(user.avatar && user.avatar != 'none') {
+                // On supprime le fichier de l'avatar.
+                const filename = user.avatar.split('/avatars/')[1];
+                fs.unlink(`avatars/${filename}`, () => {
+                    console.log('--- Avatar deleted!');
+                });
+            }
+            // Mise a jour de l'objet.
+            objectUser = {
+                ...objectUser,
+                firstname: 'Compte',
+                lastname: 'Inactif',
+                avatar: 'none',
+                isDelete: `${forDelete}`
             };
         }
         // Update profile
@@ -182,11 +215,6 @@ exports.userDel = (req,res) => {
                     console.log('--- Avatar deleted!');
                 });
             }
-            // On recherche les articles en lien avec l'utilisateur.
-            // On supprime les images des articles
-            // On supprime tous les articles et commentaires de cet utilisateur.
-            // ^^ En supprimant l'utilisateur il efface aussi les articles liés.
-
             // Suppression du compte
             Users.destroy({ where: {id:userId} })
             .then(() => {
