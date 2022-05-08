@@ -6,8 +6,7 @@ Projet Groupomania - Openclassrooms.
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
 ### Installation
 Install all the dependencies with npm :\
-`cd front`\
-`npm install`
+`cd front\ npm install`
 ### Available Scripts
 In the `front` directory, you can run:
 
