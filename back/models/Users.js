@@ -7,11 +7,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         firstname: { 
             type: Sequelize.STRING(50),
-            defaultValue: "Firstname"
+            defaultValue: "Utilisateur"
         },
         lastname: { 
             type: Sequelize.STRING(50),
-            defaultValue: "Lastname"
+            defaultValue: "Inconnu"
         },
         email: {
             type: Sequelize.STRING(100),
@@ -22,13 +22,13 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        jobId: {
-            type: Sequelize.INTEGER,
-            defaultValue: 0
-        },
         avatar: {
             type: Sequelize.STRING,
             defaultValue: "none"
+        },
+        isDelete: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: false
         },
         isAdmin: {
             type: Sequelize.BOOLEAN,
