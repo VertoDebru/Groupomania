@@ -1,34 +1,30 @@
-import { render } from 'react-dom';
+import React from "react";
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 // Import components
-import Header from "./components/Header";
 import App from './components/App';
-import Register from './routes/Register';
-import Profile from './routes/Profile';
-
-import './styles/index.css';
+// Import styles
+import './index.css';
 
 const rootElement = document.getElementById("root");
-render(
+const root = createRoot(rootElement);
+root.render(
+  //<React.StrictMode>
   <BrowserRouter>
   <Routes>
+    {/* Route by default */}
     <Route path="/" element={<App />} />
-    <Route path="/Register" element={<Register />} />
-    <Route path="/Profile" element={<Profile />} />
-    <Route path="*" element={
-      <div>
-        <Header />
-        <main>
-          <section className='error'>
-            <h2>ERROR 404</h2>
-            <p>There's nothing here!</p>
-            <a href="./../">Go to Main page</a>
-          </section>
-        </main>
-      </div>
-      }
-    />
+    {/* Unknown Route */}
+    <Route path="*" element={<>
+      <main>
+        <section className='error'>
+          <h2>ERROR 404</h2>
+          <p>There's nothing here!</p>
+          <a href="./../">Go to Main page</a>
+        </section>
+      </main>
+    </>} />
   </Routes>
-  </BrowserRouter>,
-  rootElement
+  </BrowserRouter>
+  //</React.StrictMode>
 );
