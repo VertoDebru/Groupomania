@@ -29,8 +29,8 @@ npm run start
 
 ## Specificities
 1. The first registered user will get administrator rights.
-2. It is not possible to remove administrator rights from the first user.
-3. Only the administrator can permanently delete an account. For others, the account is deactivated and keeps articles, comments and user email address.
+> It is not possible to remove administrator rights from the first user.
+2. Only the administrator can permanently delete an account. For others, the account is deactivated and keeps articles, comments and user email address.
 
 ## Features
 * Signup / Login.
@@ -49,8 +49,8 @@ npm run start
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
 ### Dependencies
-* Axios         (used for send request `GET`,`POST`,`PUT`,`DELETE`)
-* jwt-decode    (used for decode token in front)
+* Axios (used for send request `GET`,`POST`,`PUT`,`DELETE`)
+* jwt-decode (used for decode token in front)
 ### Available Scripts
 In the `front` directory, you can run:
 
@@ -66,13 +66,13 @@ Builds the app for production to the `build` folder.
 ![](https://img.shields.io/badge/NodeJs-build-blue?style=plastic&logo=node&logoColor=white)
 ![](https://img.shields.io/badge/Express-build-blue?style=plastic&logo=express&logoColor=white)
 ### Dependencies
-* bcrypt        (used to encrypt the user's password)
-* dotenv        (user for the management of environment variables)
-* express       (MVC-like framework)
-* jsonwebtoken  (used to secure connections with a token)
-* multer        (used for upload image/avatar)
-* mysql/mysql2  (used for mysql database)
-* sequelize     (used to manage the database)
+* bcrypt (used to encrypt the user's password)
+* dotenv (user for the management of environment variables)
+* express (MVC-like framework)
+* jsonwebtoken (used to secure connections with a token)
+* multer (used for upload image/avatar)
+* mysql/mysql2 (used for mysql database)
+* sequelize (used to manage the database)
 ### Available Scripts
 In the `back` directory, you can run:
 
