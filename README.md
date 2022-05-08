@@ -28,3 +28,15 @@ Runs the app server.
 Runs the app server in the development mode. (nodemon)
 
 Processing...
+
+## Groupomania - Features
+* Signup / Login.
+* Post article with/without image.
+* Modify article/image.
+* Delete article/image.
+* Like/Unlike article.
+* Post comment in article.
+* Delete comment.
+* Edit profile. (Firstname, Lastname, Email, Password, Avatar)
+* Delete account.
+* Logout.
