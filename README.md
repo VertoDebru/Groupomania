@@ -3,7 +3,7 @@ Projet Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
 
 ## Installation
-Install all the dependencies with npm.
+Install all the dependencies with npm.\
 In the `front` directory :
 ```bash
 npm install
