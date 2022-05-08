@@ -24,7 +24,7 @@ npm start
 In the `back` directory :
 ```bash
 npm install
-npm run start
+npm start
 ```
 
 ## Specificities
