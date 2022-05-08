@@ -14,6 +14,9 @@ npm install
 npm run start
 ```
 
+## Specificities
+1. The first registered user will get administrator rights.
+
 ## Features
 * Signup / Login.
 * Post article with/without image.
