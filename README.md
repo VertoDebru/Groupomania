@@ -2,7 +2,7 @@
 Projet Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
 ## Installation
-First, remember to check and/or configure the .env file :
+First time, remember to check and/or configure the .env file :
 ```
 MY_PORT = 8080          // Port used for back server.
 
