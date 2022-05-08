@@ -7,7 +7,7 @@ Projet Groupomania - Openclassrooms.
 ### Installation
 Install all the dependencies with npm :\
 `cd front`\
-`npm install`\
+`npm install`
 ### Available Scripts
 In the `front` directory, you can run:
 
