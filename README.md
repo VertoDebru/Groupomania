@@ -1,6 +1,20 @@
 # Projet 7 - Groupomania
 Projet Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
+
+## Installation
+Install all the dependencies with npm :
+### Front
+```bash
+cd front
+npm install
+```
+### Back
+```bash
+cd back
+npm install
+```
+
 ## Groupomania Front-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
@@ -29,13 +43,6 @@ Runs the app server.
 Runs the app server in the development mode. (nodemon)
 
 Processing...
-
-## Installation
-Install all the dependencies with npm :
-```bash
-cd front
-npm install
-```
 
 ## Groupomania - Features
 * Signup / Login.
