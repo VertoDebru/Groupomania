@@ -36,6 +36,7 @@ Processing...
 * Delete article/image.
 * Like/Unlike article.
 * Post comment in article.
+* Modify comment.
 * Delete comment.
 * Edit profile. (Firstname, Lastname, Email, Password, Avatar)
 * Delete account.
