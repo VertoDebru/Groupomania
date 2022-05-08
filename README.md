@@ -13,7 +13,7 @@ In the `back` directory :
 npm install
 npm run start
 ```
-## Groupomania - Features
+## Groupomania Features
 * Signup / Login.
 * Post article with/without image.
 * Modify article/image.
@@ -28,6 +28,9 @@ npm run start
 ## Groupomania Front-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
+### Dependencies
+* Axios (used for send request `GET`,`POST`,`PUT`,`DELETE`)
+* jwt-decode (used for decode token in front)
 ### Available Scripts
 In the `front` directory, you can run:
 
@@ -43,6 +46,14 @@ Processing...
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/NodeJs-build-blue?style=plastic&logo=node&logoColor=white)
 ![](https://img.shields.io/badge/Express-build-blue?style=plastic&logo=express&logoColor=white)
+### Dependencies
+* bcrypt (used to encrypt the user's password)
+* dotenv 
+* express
+* jsonwebtoken (used to secure connections with a token)
+* multer (used for upload image/avatar)
+* mysql/mysql2 (used for mysql database)
+* sequelize (used to manage the database)
 ### Available Scripts
 In the `back` directory, you can run:
 
