@@ -14,7 +14,7 @@ npm install
 npm run start
 ```
 
-## Groupomania Features
+## Features
 * Signup / Login.
 * Post article with/without image.
 * Modify article/image.
