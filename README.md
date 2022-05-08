@@ -1,7 +1,6 @@
 # Projet 7 - Groupomania
 Projet Groupomania - Openclassrooms.
 > Enterprise Social Network designed for Openclassrooms web developer training.
-
 ## Installation
 Install all the dependencies with npm.\
 In the `front` directory :
@@ -14,7 +13,18 @@ In the `back` directory :
 npm install
 npm run start
 ```
-
+## Groupomania - Features
+* Signup / Login.
+* Post article with/without image.
+* Modify article/image.
+* Delete article/image.
+* Like/Unlike article.
+* Post comment in article.
+* Modify comment.
+* Delete comment.
+* Edit profile. (Firstname, Lastname, Email, Password, Avatar)
+* Delete account.
+* Logout.
 ## Groupomania Front-End
 ![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
@@ -43,16 +53,3 @@ Runs the app server.
 Runs the app server in the development mode. (nodemon)
 
 Processing...
-
-## Groupomania - Features
-* Signup / Login.
-* Post article with/without image.
-* Modify article/image.
-* Delete article/image.
-* Like/Unlike article.
-* Post comment in article.
-* Modify comment.
-* Delete comment.
-* Edit profile. (Firstname, Lastname, Email, Password, Avatar)
-* Delete account.
-* Logout.
