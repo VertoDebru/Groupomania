@@ -35,6 +35,12 @@
     position: relative;
     width: 150px;
     height: 150px;
+    border-radius: 10em;
+    background-color: var(--color-accent-light);
+}
+.avatar-profile .fa-user {
+    font-size: 5em;
+    color: var(--color-accent);
 }
 
 .avatar-profile .avatar-options {
@@ -59,10 +65,10 @@
     border: 2px solid var(--color-options-comment);
     cursor: pointer;
 }
+
 .avatar-profile .avatar-options div.delete {
     border: 2px solid var(--color-primary);
 }
-
 
 .avatar-profile .avatar-options div.delete:hover,
 .avatar-profile .avatar-options label:hover {
