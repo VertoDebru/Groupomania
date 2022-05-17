@@ -250,7 +250,6 @@ export default class Profile extends React.Component {
       return (<>
   
         <div className='profile'>
-          <h2><i className="fa-solid fa-user"></i> Mon compte</h2>
           <form onSubmit={this.OnSubmit} disabled={validForm}>
           {!isLoading && userLogged ? <Avatar dataUser={{...userLogged, isProfile: true}} fileAvatar={fileAvatar} OnChange={this.OnChange} deleteAvatar={this.deleteAvatar} /> : <TinyLoader />}
             <div className="names-content">

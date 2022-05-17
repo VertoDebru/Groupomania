@@ -307,7 +307,7 @@ export default class Article extends React.Component {
               <h4>{author.job.jobs} | <i className="fa-solid fa-clock"></i> {this.convertDate()}</h4>
             </div>
             <div className="article-no-options">
-            <button onClick={this.onEditClick}><i className="fa-solid fa-check"></i></button>
+            <button onClick={this.onEditClick}><span className="hidden">confirm edit article</span><i className="fa-solid fa-check"></i></button>
             </div>
           </div>
 
@@ -318,12 +318,14 @@ export default class Article extends React.Component {
 
             <div className='article-edit-avatar'>
               <label htmlFor="picture" className="file-upload" onChange={this.OnChange}>
-                  {fileUpload ? <i className="fa-solid fa-xmark"></i> : <i className="fa-solid fa-image"></i>}
-                </label>
+                <span className="hidden">picture</span>
+                {fileUpload ? <i className="fa-solid fa-xmark"></i> : <i className="fa-solid fa-image"></i>}
+              </label>
                 <input id="picture" name='picture' type='file' label='UploadImage'
                 accept=".jpg,.jpeg,.png,.gif" onChange={this.OnChange} />
               {article.image !== 'none' ? (<>
                 <button label='delAvatar' onClick={this.onDeleteImage}>
+                  <span className="hidden">delete Avatar</span>
                   <i className="fa-solid fa-trash"></i>
                 </button>
                 <img src={article.image} alt='postedImage' />

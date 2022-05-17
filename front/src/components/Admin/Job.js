@@ -111,6 +111,7 @@ export default class Job extends React.Component {
         <div className="job" key={'Jobs-'+job.id}>
           {editJob ? (<>
 
+            <label htmlFor="Job">Job</label>
             <input key={job.id} id='Job' name='job' type='text' placeholder="Emploi ?"
               defaultValue={valueJob} onChange={this.OnChange} />
               <div>
@@ -129,6 +130,7 @@ export default class Job extends React.Component {
             <p>{job.jobs}</p>
             <div>
               <button className="edit" aria-label="editJob" value={job.id} onClick={this.OnClickEditJob}>
+                <span className="hidden">edit job</span>
                 <i className="fa-solid fa-pen"></i>
               </button>
               {job.id === 1 ? null : (<>

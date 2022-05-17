@@ -83,7 +83,7 @@ export default class AddForm extends React.Component {
               <label htmlFor="article">article</label>
               <input id="article" type='text' name="article" placeholder={'Quoi de neuf, '+userLogged.firstname+' ?'}
               value={valueArticle} onChange={this.OnChange} />
-              <label htmlFor="image" className="file-upload"><i className="fa-solid fa-image"></i></label>
+              <label htmlFor="image" className="file-upload"><span className="hidden">upload</span><i className="fa-solid fa-image"></i></label>
               <input id="image" name="image" onChange={this.OnChange} type="file" label="UploadImage" accept=".jpg,.jpeg,.png,.gif"></input>
               <button aria-label="sendarticle" disabled={isValid}>
                   <i className="fa-solid fa-paper-plane" alt="sendarticle"></i>

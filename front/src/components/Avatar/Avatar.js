@@ -58,6 +58,7 @@ export default class Avatar extends React.Component {
               {this.setAvatar()}
               <div className="avatar-options">
               <label htmlFor="avatar" onChange={this.props.OnChange}>
+              <span className="hidden">avatar</span>
                 {this.props.fileAvatar ? <i className="fa-solid fa-xmark"></i> : (<>
                 <i className="fa-solid fa-upload"></i>
                 </>) }
