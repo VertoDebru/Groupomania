@@ -21,12 +21,12 @@ DB_PORT = 3306          // Database port.
 ```
 
 Install all the dependencies with npm.\
-In the `front` directory :
+In the `back` directory :
 ```bash
 npm install
 npm start
 ```
-In the `back` directory :
+In the `front` directory :
 ```bash
 npm install
 npm start
