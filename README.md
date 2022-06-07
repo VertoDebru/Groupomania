@@ -51,8 +51,8 @@ npm start
 * Logout.
 
 ## Groupomania Front-End
-![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
-![](https://img.shields.io/badge/React-build-blue?style=plastic&logo=react&logoColor=white)
+![javascript](https://img.shields.io/badge/Javascript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ### Dependencies
 * Axios (used for send request `GET`,`POST`,`PUT`,`DELETE`)
 * jwt-decode (used for decode token in front)
@@ -67,9 +67,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Builds the app for production to the `build` folder.
 
 ## Groupomania Back-End
-![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
-![](https://img.shields.io/badge/NodeJs-build-blue?style=plastic&logo=node&logoColor=white)
-![](https://img.shields.io/badge/Express-build-blue?style=plastic&logo=express&logoColor=white)
+![javascript](https://img.shields.io/badge/Javascript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![NodeJs](https://img.shields.io/badge/NodeJs-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-EEEEEE?style=for-the-badge&logo=express&logoColor=black)
+
 ### Dependencies
 * bcrypt (used to encrypt the user's password)
 * dotenv (user for the management of environment variables)
